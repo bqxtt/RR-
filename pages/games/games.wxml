@@ -1,2 +1,44 @@
-<!--pages/games/games.wxml-->
-<text>pages/games/games.wxml</text>
+<!--dbdemo/pages/picture/picture.wxml-->
+<!--<text>dbdemo/pages/picture/picture.wxml</text>-->
+
+<!--页面根标签-->
+<view wx:if="{{index < maxindex&&(index == 2||index == 3||index == 6||index == 13||index == 17)}}">
+    <!--pics文件夹下的background.jpg文件-->
+    <image class='background' src="../../resource/image/background.jpg" mode="scaleToFill" bindtap="nextpage"></image>
+    <!--页面其它部分-->
+    <text style='position:fixed;width:100%;bottom:63px'>{{text}}</text>
+
+    <button class="firstchoice" bindtap="firsthandle">A:{{q1[choiceindex]}}</button>
+    <button class="secondchoice" bindtap="secondhandle">B:{{q2[choiceindex]}}</button>
+    <button class="thirdchoice" bindtap="thirdhandle">C:{{q3[choiceindex]}}</button>
+</view>
+<view wx:elif="{{index == 0}}">
+  <image class='background' src="../../resource/image/background.jpg" mode="scaleToFill"bindtap="nextpage"></image>
+    <!--页面其它部分-->
+  <text style='position:fixed;width:100%;bottom:63px'>{{text}}</text>
+</view>
+<view wx:elif="{{index !=18}}">
+  <image class='background' src="../../resource/image/background.jpg" mode="scaleToFill"bindtap="nextpage"></image>
+    <!--页面其它部分-->
+  <text style='position:fixed;width:100%;bottom:63px'>{{text}}</text>
+  <text class='inputtext'>请输入：</text>
+  <input class="input" name="answer" value="{{inputanswer}}" placeholder="请根据括号提示输入下划线中要填写的答案" bindinput="answerinput"></input>
+  <button class="confirm" bindtap="confirmclick">确定</button>
+</view>
+<view wx:else>
+  <scroll-view scroll-y="true">
+    <view wx:for="{{correct}}">
+      <text>第{{index+1}}题\n</text>
+      <view wx:if="{{item == answer[index]}}">
+        <text class="checkcorrect">你的答案:{{answer[index]}}\n</text>
+      </view>
+      <view wx:else>
+        <text class="checkwrong">你的答案:{{answer[index]}}\n</text>
+      </view>
+      <text>正确答案:{{item}}\n</text>
+      <text>---------------------------\n</text>
+    </view>
+    <text>\n{{reference}}\n</text>
+  </scroll-view>
+</view>
+

@@ -1,1 +1,65 @@
-/* pages/games/games.wxss */
+/* dbdemo/pages/picture/picture.wxss */
+
+
+.background {
+  width: 100%;
+  height: 100%;
+  position:fixed; 
+  background-size:100% 100%;
+  z-index: -1;
+}
+
+.firstchoice {
+  width: 100%;
+  position:fixed;
+  margin-top: 100px;
+  margin-left: 10px;
+  z-index: 0;
+}
+.secondchoice {
+  width: 100%;
+  position:fixed;
+  margin-top: 200px;
+  margin-left: 10px;
+  z-index: 0;
+}
+.thirdchoice {
+  width: 100%;
+  position:fixed;
+  margin-top: 300px;
+  margin-left: 10px;
+  z-index: 0;
+}
+
+.text1 {
+  width: 100%;
+  height: 100%;
+  position:fixed; 
+  bottom:0;
+  z-index: 0;
+  font: 50
+}
+
+.inputtext{
+  width:100%;
+  height:100%;
+  color: red;
+  display:flex;
+  padding-top: 100px;
+  font:40;
+}
+
+.input{
+  width:100%;
+  height:100%;
+  color: red;
+  font:40;
+}
+
+.checkcorrect{
+  color: green;
+}
+
+.checkwrong{
+  color: red;
+}
