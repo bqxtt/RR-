@@ -1,0 +1,7 @@
+/* pages/words/words.wxss */
+.md
+{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px; 
+}

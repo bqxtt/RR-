@@ -1,0 +1,52 @@
+<scroll-view class="scroll-box" scroll-x scroll-with-animation
+  scroll-into-view="{{toView}}"
+  bindtouchstart="touchStart"
+  bindtouchend="touchEnd">
+    <view wx:for="{{words}}" wx:key="_id" class="card-box" id="card_{{index}}">
+      <view class="card">
+        <!--正面的框  -->
+        <view class="box b1" animation="{{animationMain}}" bindtap='rotateFn' data-id="1" >
+          <!-- 单词 -->
+          <view class="desc">
+            <text class="wordKey">{{item.wordKey}}</text>
+            <text class="character">{{item.character}}</text>
+          </view>
+          <!-- 卡片序号 -->
+          <view class="number">{{index + 1}} / {{maxPage}}</view>
+        </view>
+        <!--背面的框  -->
+        <view class="box b2" animation="{{animationBack}}"  bindtap='rotateFn' data-id="2">
+          <!-- 单词解释 -->
+          <view class="desc">
+            <text class="chinese">{{item.Chinese}}</text>
+            <text class="english">{{item.English1}}</text>
+          </view>
+          <!-- 卡片序号 -->
+          <view class="number">{{index + 1}} / {{maxPage}}</view>
+        </view>
+
+      </view>
+      <view class="card-button">
+        <van-button round icon="plus" type="primary" bind:click="showNote">笔记</van-button>
+        <van-button round icon="{{marked[index] ? 'star' : 'star-o'}}" type="primary" bind:click="mark" data-id="{{index}}">标记</van-button>
+      </view>
+      <view class="upArrow">
+        <van-icon name="arrow-up" size="40px" bind:click="openComment"/>
+      </view>
+    </view>
+
+</scroll-view>
+<van-popup
+  show="{{ show }}"
+  round
+  closeable
+  close-icon="close"
+  position="bottom"
+  custom-style="height: 70%"
+  bind:close="onClose"
+>
+    <van-cell wx:for="{{notes}}" wx:key="_id" title="{{item}}">
+
+    </van-cell>
+</van-popup>
+<van-toast id="van-toast"/>

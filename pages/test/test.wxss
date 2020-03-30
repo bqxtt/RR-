@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  background: bisque;
+  top: 100px;
+  position: relative;
+}
+
+.view1 {
+  width: 128rpx;
+  height: 128rpx;
+  background-color: red;
+}
+.view2 {
+  width: 128rpx;
+  height: 128rpx;
+  background-color: rebeccapurple;
+}
+.view3 {
+  width: 128rpx;
+  height: 128rpx;
+  background-color: royalblue;
+}
+.view4 {
+  width: 128rpx;
+  height: 128rpx;
+  background-color: paleturquoise;
+}
+.other
+{
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}

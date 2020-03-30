@@ -1,0 +1,5 @@
+<!--pages/words/words.wxml-->
+<view class="md">
+<van-button round type="primary" bind:click="browse">浏览模式</van-button>
+<van-button round type="primary">背诵模式</van-button>
+</view>

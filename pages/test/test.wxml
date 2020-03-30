@@ -1,0 +1,6 @@
+<view class="container">
+  <view class='view1'>1</view>
+  <view class='view2 other'>2</view>
+  <view class='view3'>3</view>
+  <view class='view4'>4</view>
+</view>

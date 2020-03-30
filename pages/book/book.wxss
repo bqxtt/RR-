@@ -1,0 +1,22 @@
+/* pages/book/book.wxss */
+Page
+{
+  height: 100%;
+}
+.van-swipe-cell__right {
+  width: 65px;
+  height: 65px;
+  color: #0000ff;
+}
+.words-list
+{
+  flex : 1;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+.words
+{
+  display: flex;
+  flex-direction: column;
+  height:100%;
+}

@@ -1,0 +1,14 @@
+
+.book
+{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  text-align: center;
+  margin: 10rpx;
+}
+.books
+{
+  display: flex;
+  flex-wrap: wrap;
+}

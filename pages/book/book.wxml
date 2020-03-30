@@ -1,0 +1,12 @@
+<!--pages/book/book.wxml-->
+<text>this is book {{func}}</text>
+
+<view class="words">
+  <scroll-view class="words-list" scroll-y="true" scroll-top="{{scrolltop}}" bindscroll="scrollHandle" lower-threshold="50" bindscrolltolower="scrollLoading">
+    <van-cell wx:for="{{words}}" wx:key="_id" title="{{item.wordKey}}" label="{{item.character}}" data-currentView="{{index}}" bind:click="onClick">
+
+    </van-cell>
+  </scroll-view>
+  <van-dialog id="van-dialog"/>
+  <van-toast id="van-toast"/>
+</view>

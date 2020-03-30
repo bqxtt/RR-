@@ -1,0 +1,8 @@
+<!--pages/books/books.wxml-->
+<view class="title">选择学习词书</view>
+<view class="books">
+  <view wx:for="{{books}}" wx:key="id" data-func="{{item.func}}" class="book" bindtap="bookFunc">
+    <van-image src="{{item.src}}" width="200rpx" height="200rpx"></van-image>
+    <text >{{item.text}}</text>
+  </view>
+</view>

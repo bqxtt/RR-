@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/cards/cards",
+    "pages/book/book",
+    "pages/test/test",
+    "pages/my/my",
+    "pages/index/index",
+    "pages/books/books",
+    "pages/logs/logs",
+    "pages/words/words",
+    "pages/games/games",
+    "pages/change/change",
+    "pages/comment/comment",
+    "pages/note/note"
+  ],
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/change/change",
+        "text": "变位"
+      },
+      {
+        "pagePath": "pages/words/words",
+        "text": "单词"
+      },
+      {
+        "pagePath": "pages/games/games",
+        "text": "游戏"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "RR西语社",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "van-button": "@vant/weapp/button",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-field": "@vant/weapp/field/index"
+  },
+  "sitemapLocation": "sitemap.json"
+}
