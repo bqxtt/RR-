@@ -1,4 +1,4 @@
-// pages/change/change.js
+// dbdemo/pages/rebe/rebe.js
 Page({
 
   /**
@@ -68,4 +68,15 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+  ,
+  toPractice: function () {
+    wx.navigateTo({
+      url: '../rebecaca/rebecaca',
+    })
+
+  }
+}
+
+
+)
+

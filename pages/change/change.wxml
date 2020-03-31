@@ -1,2 +1,3 @@
-<!--pages/change/change.wxml-->
-<text>pages/change/change.wxml</text>
+<button class="b" type="primary" style="width:100%" > 变位查询 </button>
+
+<button class="b" type="primary" style="width:100%" bindtap="toPractice"> 变位练习 </button>

@@ -1,1 +1,5 @@
-/* pages/change/change.wxss */
+/* dbdemo/pages/rebe/rebe.wxss */
+.b{
+  margin-top: 2vh;
+  padding: 5px
+}

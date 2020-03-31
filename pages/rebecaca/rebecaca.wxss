@@ -1,0 +1,35 @@
+/* dbdemo/pages/rebecaca/rebecaca.wxss */
+.Bbounder{
+  border: 5rpx solid grey
+
+}
+.shitai{
+  
+  width: 100%;
+  
+  text-align: center;
+  border: 3rpx solid black;
+
+}
+.rencheng{
+   border: 3rpx solid black
+   
+
+}
+.title{
+
+  width: 100%;
+
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 130%
+}
+.btitle{
+    width: 100%;
+
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 150%
+
+
+}

@@ -1,12 +1,15 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/books/books",
     "pages/cards/cards",
+    
+    
     "pages/book/book",
     "pages/test/test",
     "pages/my/my",
     "pages/index/index",
-    "pages/books/books",
+    
     "pages/logs/logs",
     "pages/words/words",
     "pages/games/games",

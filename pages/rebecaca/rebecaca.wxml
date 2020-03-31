@@ -1,0 +1,493 @@
+<!--dbdemo/pages/rebecaca/rebecaca.wxml-->
+<!--dbdemo/pages/index/index.wxml-->
+
+<view class="btitle"> CONJUGACIÓN/变位练习</view>
+<view class="title">{{yuan[id-1].yuanxing}}
+
+</view>
+
+<scroll-view scroll-y="true" style="height: 700rpx;" >
+
+  <view class="Bbounder" wx:if="{{id>0}}"> 
+    <view class="shitai">{{bianweiCatalog[0]}}</view>
+
+    <view class="rencheng"  style="color:{{blue}};">"yo"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer1"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[1]==1}}" style="color:{{black}};">  
+        <view>{{showV1[0].yo}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[0].yo}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"tú"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer2"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[2]==1}}" style="color:{{black}};">  
+        <view>{{showV1[0].tu}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[0].tu}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"el_ella_usted"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer3"/>
+    <view wx:if="{{sti==1}}"> 
+    <view wx:if="{{color[3]==1}}" style="color:{{black}};">  
+        <view>{{showV1[0].el_ella_usted}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[0].el_ella_usted}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"nosotros"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer4"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[4]==1}}" style="color:{{black}};">  
+        <view>{{showV1[0].nosotros}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[0].nosotros}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"vosotros"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer5"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[5]==1}}" style="color:{{black}};">  
+        <view>{{showV1[0].vosotros}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[0].vosotros}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"ellos_ellas_ustedes"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer6"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[6]==1}}" style="color:{{black}};">  
+        <view>{{showV1[0].ellos_ellas_ustedes}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[0].ellos_ellas_ustedes}} </view>
+      </view>
+    </view>
+  </view>
+
+  
+
+
+
+
+
+    <view class="Bbounder" wx:if="{{id>0}}"> 
+    <view class="shitai">{{bianweiCatalog[1]}}</view>
+
+    <view class="rencheng"  style="color:{{blue}};">"yo"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer7"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[7]==1}}" style="color:{{black}};">  
+        <view>{{showV1[1].yo}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[1].yo}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"tú"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer8"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[8]==1}}" style="color:{{black}};">  
+        <view>{{showV1[1].tu}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[1].tu}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"el_ella_usted"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer9"/>
+    <view wx:if="{{sti==1}}"> 
+    <view wx:if="{{color[9]==1}}" style="color:{{black}};">  
+        <view>{{showV1[1].el_ella_usted}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[1].el_ella_usted}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"nosotros"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer10"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[10]==1}}" style="color:{{black}};">  
+        <view>{{showV1[1].nosotros}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[1].nosotros}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"vosotros"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer11"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[11]==1}}" style="color:{{black}};">  
+        <view>{{showV1[1].vosotros}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[1].vosotros}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"ellos_ellas_ustedes"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer12"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[12]==1}}" style="color:{{black}};">  
+        <view>{{showV1[1].ellos_ellas_ustedes}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[1].ellos_ellas_ustedes}} </view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+
+
+
+
+
+    <view class="Bbounder" wx:if="{{id>0}}"> 
+    <view class="shitai">{{bianweiCatalog[2]}}</view>
+
+    <view class="rencheng"  style="color:{{blue}};">"yo"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer13"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[13]==1}}" style="color:{{black}};">  
+        <view>{{showV1[2].yo}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[2].yo}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"tú"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer14"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[14]==1}}" style="color:{{black}};">  
+        <view>{{showV1[2].tu}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[2].tu}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"el_ella_usted"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer15"/>
+    <view wx:if="{{sti==1}}"> 
+    <view wx:if="{{color[15]==1}}" style="color:{{black}};">  
+        <view>{{showV1[2].el_ella_usted}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[2].el_ella_usted}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"nosotros"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer16"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[16]==1}}" style="color:{{black}};">  
+        <view>{{showV1[2].nosotros}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[2].nosotros}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"vosotros"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer17"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[17]==1}}" style="color:{{black}};">  
+        <view>{{showV1[2].vosotros}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[2].vosotros}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"ellos_ellas_ustedes"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer18"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[18]==1}}" style="color:{{black}};">  
+        <view>{{showV1[2].ellos_ellas_ustedes}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[2].ellos_ellas_ustedes}} </view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <view class="Bbounder" wx:if="{{id>0}}"> 
+    <view class="shitai">{{bianweiCatalog[3]}}</view>
+
+    <view class="rencheng"  style="color:{{blue}};">"yo"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer19"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[19]==1}}" style="color:{{black}};">  
+        <view>{{showV1[3].yo}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[3].yo}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"tú"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer20"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[20]==1}}" style="color:{{black}};">  
+        <view>{{showV1[3].tu}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[3].tu}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"el_ella_usted"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer21"/>
+    <view wx:if="{{sti==1}}"> 
+    <view wx:if="{{color[21]==1}}" style="color:{{black}};">  
+        <view>{{showV1[3].el_ella_usted}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[3].el_ella_usted}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"nosotros"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer22"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[22]==1}}" style="color:{{black}};">  
+        <view>{{showV1[3].nosotros}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[3].nosotros}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"vosotros"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer23"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[23]==1}}" style="color:{{black}};">  
+        <view>{{showV1[3].vosotros}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[3].vosotros}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"ellos_ellas_ustedes"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer24"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[24]==1}}" style="color:{{black}};">  
+        <view>{{showV1[3].ellos_ellas_ustedes}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[3].ellos_ellas_ustedes}} </view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <view class="Bbounder" wx:if="{{id>0}}"> 
+    <view class="shitai">{{bianweiCatalog[4]}}</view>
+
+    <view class="rencheng"  style="color:{{blue}};">"yo"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer25"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[25]==1}}" style="color:{{black}};">  
+        <view>{{showV1[4].yo}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[4].yo}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"tú"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer26"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[26]==1}}" style="color:{{black}};">  
+        <view>{{showV1[4].tu}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[4].tu}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"el_ella_usted"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer27"/>
+    <view wx:if="{{sti==1}}"> 
+    <view wx:if="{{color[27]==1}}" style="color:{{black}};">  
+        <view>{{showV1[4].el_ella_usted}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[4].el_ella_usted}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"nosotros"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer28"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[28]==1}}" style="color:{{black}};">  
+        <view>{{showV1[4].nosotros}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[4].nosotros}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"vosotros"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer29"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[29]==1}}" style="color:{{black}};">  
+        <view>{{showV1[4].vosotros}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[4].vosotros}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"ellos_ellas_ustedes"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer30"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[30]==1}}" style="color:{{black}};">  
+        <view>{{showV1[4].ellos_ellas_ustedes}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[4].ellos_ellas_ustedes}} </view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+
+
+
+
+
+
+
+    <view class="Bbounder" wx:if="{{id>0}}"> 
+    <view class="shitai">{{bianweiCatalog[5]}}</view>
+
+    <view class="rencheng"  style="color:{{blue}};">"yo"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer31"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[31]==1}}" style="color:{{black}};">  
+        <view>{{showV1[5].yo}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[5].yo}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"tú"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer32"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[32]==1}}" style="color:{{black}};">  
+        <view>{{showV1[5].tu}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[5].tu}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"el_ella_usted"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer33"/>
+    <view wx:if="{{sti==1}}"> 
+    <view wx:if="{{color[33]==1}}" style="color:{{black}};">  
+        <view>{{showV1[5].el_ella_usted}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[5].el_ella_usted}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"nosotros"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer34"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[34]==1}}" style="color:{{black}};">  
+        <view>{{showV1[5].nosotros}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[5].nosotros}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"vosotros"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer35"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[35]==1}}" style="color:{{black}};">  
+        <view>{{showV1[5].vosotros}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[5].vosotros}} </view>
+      </view>
+    </view>
+
+    <view class="rencheng" style="color:{{blue}};">"ellos_ellas_ustedes"</view>
+    <input class="weui-input" maxlength="10" placeholder="最大输入长度为10" bindinput="checkAnswer36"/>
+    <view wx:if="{{sti==1}}"> 
+      <view wx:if="{{color[36]==1}}" style="color:{{black}};">  
+        <view>{{showV1[5].ellos_ellas_ustedes}} </view>
+      </view>
+      <view wx:else style="color:{{red}};">  
+        <view>{{showV1[5].ellos_ellas_ustedes}} </view>
+      </view>
+    </view>
+  </view>
+
+
+
+<!-- </view> -->
+
+<!-- </view> -->
+
+</scroll-view>
+
+<button class="loginBtn" bindtap="increaseId">下一题</button>
+<button class="123" bindtap="submit">提交</button>
+<!-- </view>  -->

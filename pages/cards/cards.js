@@ -41,13 +41,13 @@ Page({
       toView : `card_${this.currentView}`,
       marked : mark
     })
-    console.log(app.globalData.words)
+    //console.log(app.globalData.words)
 
-    console.log(mark)
+    //console.log(mark)
 
   },
   //卡片反转动画
-  rotateFn(e) {
+  rotateFn : function(e) {
     console.log(e);
     var id = e.currentTarget.dataset.id
 
@@ -71,7 +71,7 @@ Page({
     }
   },
 
-  touchStart(e) {
+  touchStart : function(e) {
     console.log(e);
     this.startPageX = e.changedTouches[0].pageX;
     this.startPageY = e.changedTouches[0].pageY;
@@ -85,11 +85,11 @@ Page({
     
   },
 
-  touchEnd(e) {
+  touchEnd : function(e) {
     const moveX = e.changedTouches[0].pageX - this.startPageX;
     const moveY = e.changedTouches[0].pageY - this.startPageY;
     const maxPage = this.data.words.length - 1;
-    console.log(moveX);
+    //console.log(moveX);
     if (Math.abs(moveX) >= 150) {
       if (moveX > 0) {
         this.currentView = Number(this.currentView) !== 0 ? Number(this.currentView) - 1 : 0;
