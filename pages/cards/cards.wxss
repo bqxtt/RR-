@@ -57,8 +57,8 @@ page{
 }
 .wordKey
 {
-  font-size: 40px;
-  width: 100%;
+  font-size: 30px;
+  width: 80%;
   text-align: center;
 }
 .character
@@ -69,7 +69,7 @@ page{
 }
 .chinese
 {
-  font-size: 40px;
+  font-size: 30px;
   width: 80%;
   text-align: center;
 }

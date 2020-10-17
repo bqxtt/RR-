@@ -1,6 +1,7 @@
 // pages/home/home.js
+const app = getApp()
 Page({
-
+  requestUrl: app.globalData.requestUrl,
   /**
    * 页面的初始数据
    */
@@ -12,7 +13,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.request({
+      url: app.globalData.requestUrl + '/words/getWords/new_modern',
+      success (res) {
+        console.log(res.data)
+      }
+    })
   },
 
   /**

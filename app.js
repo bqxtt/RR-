@@ -38,6 +38,7 @@ App({
   globalData: {
     words : [],
     markedWords: [],
-    isMarkedPage: null
+    isMarkedPage: null,
+    requestUrl: "https://localhost"
   }
 })

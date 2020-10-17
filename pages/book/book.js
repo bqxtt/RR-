@@ -3,8 +3,8 @@ import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast'
 // pages/book/book.js
 const LIMIT = 20
 const app = getApp()
+var tableName = ''
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -21,11 +21,8 @@ Page({
    */
   onLoad: function (options) {
     //console.log(options.id);
-    this.setData(
-      {
-        func : options.func
-      });
-
+    tableName = options.tablename
+    console.log(tableName)
     //临时标记特判
     if (options.func == "getMarkedWords")
     {
@@ -35,8 +32,10 @@ Page({
       app.globalData.isMarkedPage = true
     }
 
-    else this.fetchWords();
-      //console.log(this.data.words)
+    else {
+      this.fetchWords();
+    }
+    //console.log(this.data.words)
   },
   fetchWords : function()
   {
@@ -46,42 +45,37 @@ Page({
       loadingType: 'spinner',
       message: '加载中...'
     });
-    wx.cloud.callFunction({
-      name : this.data.func,
-      success : res =>
-      {
-        console.log(res);
-        this.setData({
-          words : res.result.data
+    const that = this
+    wx.request({
+      url: app.globalData.requestUrl + '/words/getWords/' + tableName,
+      success (res) {
+        that.setData({
+          words: res.data
         })
-        // var len = this.data.words.length;
-        // var that = this;
-        // for (var i in this.data.words) {
-        //   console.log(i);
-        //   wx.cloud.callFunction({
-        //     name: 'checkMark',
-        //     data:
-        //     {
-        //       "wordKey": that.data.words[i].wordKey
-        //     },
-        //     success: res => {
-        //       //console.log(res.result);
-        //       var flag = "words[" + i + "].flag";
-        //       that.setData({
-        //         [flag]: res.result
-        //       })
-        //       console.log(i)
-        //     }
-        //   })
-        // }
-        console.log(this.data.words)
+        console.log(res.data)
         toast.clear()
       },
-      fail : res => 
-      {
+      fail (res) {
+        console.log(res)
         Toast.fail('加载失败')
       }
     })
+    // wx.cloud.callFunction({
+    //   name : this.data.func,
+    //   success : res =>
+    //   {
+    //     console.log(res);
+    //     this.setData({
+    //       words : res.result.data
+    //     })
+    //     console.log(this.data.words)
+    //     toast.clear()
+    //   },
+    //   fail : res => 
+    //   {
+    //     Toast.fail('加载失败')
+    //   }
+    // })
   },
   scrollHandle: function(e)
   {

@@ -1,49 +1,35 @@
 // pages/books/books.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    books:
-    [
-      {
-          "src": "../../../../resource/image/book.png",
-          "text": "专业四级",
-          "func": "getStandardDic"
-      },
-      {
-        "src": "../../../../resource/image/book.png",
-        "text":"默认",
-        "func": "getMyWords"
-      },
-      {
-        "src": "../../../../resource/image/book.png",
-        "text":"标记",
-        "func": "getMarkedWords"
-      },
-      // {
-      //   "src": "../../../../resource/image/book.png",
-      //   "text":"标记",
-      //   "id":3
-      // }
-    ]
-
+    books : []
   },
   onLoad :function(options)
   {
-    const app = getApp();
+    var that = this
+    wx.request({
+      url: app.globalData.requestUrl + '/words/getAllWordsTableName',
+      success (res) {
+        that.setData({
+          books: res.data
+        })
+        console.log(res.data)
+      }
+    })
     app.globalData.isMarkedPage = false;
   },
 
  
-  bookFunc: function(e)
-  {
-    const func = e.currentTarget.dataset.func;
+  bookFunc: function(e){
+    const tableName = e.currentTarget.dataset.tablename;
+    console.log(tableName)
     wx.navigateTo({
-      url: '../book/book?func=' + func,
-      fail:function(e)
-      {
+      url: '../book/book?tablename=' + tableName,
+      fail:function(e){
         console.log(e);
       }
     })

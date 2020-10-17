@@ -8,8 +8,8 @@
         <view class="box b1" animation="{{animationMain}}" bindtap='rotateFn' data-id="1" >
           <!-- 单词 -->
           <view class="desc">
-            <text class="wordKey">{{item.wordKey}}</text>
-            <text class="character">{{item.character}}</text>
+            <text class="wordKey">{{item.word}}</text>
+            <text class="character">{{item.categoria}}</text>
           </view>
           <!-- 卡片序号 -->
           <view class="number">{{index + 1}} / {{maxPage}}</view>
@@ -18,8 +18,8 @@
         <view class="box b2" animation="{{animationBack}}"  bindtap='rotateFn' data-id="2">
           <!-- 单词解释 -->
           <view class="desc">
-            <text class="chinese">{{item.Chinese}}</text>
-            <text class="english">{{item.English1}}</text>
+            <text class="chinese">{{item.chinese}}</text>
+            <text class="english">{{item.english}}</text>
           </view>
           <!-- 卡片序号 -->
           <view class="number">{{index + 1}} / {{maxPage}}</view>
