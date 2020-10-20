@@ -21,7 +21,8 @@
   </view>
   <view class="card-button">
     <van-button round icon="plus" type="primary" bind:click="showNote">笔记</van-button>
-    <van-button round icon="{{word.isMarked ? 'star' : 'star-o'}}" type="primary" bind:click="mark" data-wordid="{{word.id}}">
+    <van-button round icon="{{word.isMarked ? 'star' : 'star-o'}}" type="primary" bind:click="mark"
+      data-wordid="{{word.id}}">
       标记</van-button>
   </view>
   <view class="upArrow">
@@ -29,4 +30,30 @@
   </view>
 </view>
 
-<van-toast id="van-toast"/>
+<van-popup show="{{ show }}" round closeable close-icon="close" position="bottom" custom-style="height: 70%"
+  bind:close="onClose">
+  <view class="notes">
+    <scroll-view class="notes-list" scroll-y="true" scroll-top="{{scrolltop}}" bindscroll="scrollHandle"
+      lower-threshold="50" bindscrolltolower="scrollLoading">
+      <!-- <van-cell title="testsssssssssssssssssssss" wx:for="{{100}}">
+      </van-cell> -->
+      <view class="note" wx:for="{{10}}">
+        <view class="userinfo">
+          <image class="user-avatar" src="https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqkeYUwQMKbRwicNL6hvPXm3JaGesncwzicCia003yzEtyxibA9kDCL6Vr6NSUgyKaAib9Tb84VNUXyAjg/132"></image>
+          <text class="user-nickname">bqx</text>
+        </view>
+        <view class="content">
+          <text>
+            笔记笔记笔记顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶顶！
+          </text>
+        </view>
+      <view class="time">
+        <text>2020-10-20 00:00:00</text>
+      </view>
+      </view>
+
+    </scroll-view>
+  </view>
+</van-popup>
+
+<van-toast id="van-toast" />

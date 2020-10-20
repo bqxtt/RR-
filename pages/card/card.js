@@ -125,5 +125,15 @@ Page({
     wx.navigateTo({
       url: '../note/note',
     })
-  }
+  },
+  scrollHandle: function (e) {
+    //console.log(e);
+    this.setData({
+      scrolltop: e.detail.scrollTop
+    })
+  },
+  scrollLoading: function () {
+    console.log("hahah");
+    //this.fetchWords();
+  },
 })

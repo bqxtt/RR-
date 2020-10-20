@@ -1,9 +1,9 @@
 <!--pages/book/book.wxml-->
-<van-sticky>
-  <view class="title">
+
+  <view class="book-name">
     <text>{{wordName}}</text>
   </view>
-</van-sticky>
+
 <view class="words">
   <scroll-view class="words-list" scroll-y="true" scroll-top="{{scrolltop}}" bindscroll="scrollHandle"
     lower-threshold="50" bindscrolltolower="scrollLoading">
