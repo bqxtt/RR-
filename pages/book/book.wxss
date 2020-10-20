@@ -1,6 +1,7 @@
 /* pages/book/book.wxss */
 Page {
   height: 100%;
+  position: fixed;
 }
 
 .van-swipe-cell__right {
@@ -36,5 +37,6 @@ Page {
   padding-top: 10px;
   padding-bottom: 10px;
   height: 8%;
+  position: relative;
 }
 

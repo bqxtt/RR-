@@ -15,7 +15,7 @@
     <van-grid-item icon="../../../../resource/image/mark.png" text="我的标记" link-type="navigateTo"
       url="/pages/book/book?wordbookid=marked&wordbookname=我的标记" />
     <van-grid-item icon="../../../../resource/image/dictionary.png" text="单词"  link-type="switchTab"
-      url="/pages/words/words"/>
+      url="/pages/books/books"/>
   </van-grid>
 
   <van-divider contentPosition="left">
@@ -28,3 +28,5 @@
   </van-grid>
 
 </view>
+
+<van-toast id="van-toast" />

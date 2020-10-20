@@ -1,36 +1,64 @@
 // pages/note/note.js
 import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast'
+const app = getApp()
+var wordId
 Page({
-
-  note : '',
-  /**
-   * 页面的初始数据
-   */
+  note: '',
   data: {
 
   },
+  onLoad: function (options) {
+    wordId = options.wordId
+  },
 
-  tmpNote: function(e)
-  {
+  tmpNote: function (e) {
     console.log(e)
     this.note = e.detail
   },
-  sendNote: function()
-  {
-    var pages = getCurrentPages();
-    var prevPage = pages[pages.length - 2];
-    var newNotes = prevPage.data.notes;
-    newNotes.push(this.note);
-    console.log(this.note);
-    prevPage.setData({
-      notes : newNotes
-    })
-    Toast({
-      type: 'success',
-      duration : 1000,
-      message: '发送成功',
-      onClose: () => {
-        wx.navigateBack()
+  sendNote: function () {
+    wx.request({
+      url: app.globalData.requestUrl + '/words/addComment',
+      method: "POST",
+      data: {
+        wordId: wordId,
+        userOpenId: app.globalData.openId,
+        userNickname: app.globalData.userInfo.nickName,
+        userAvatarUrl: app.globalData.userInfo.avatarUrl,
+        comment: this.note
+      },
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success: res => {
+        if (res.data === 'success') {
+          Toast({
+            type: 'success',
+            duration: 1000,
+            message: '保存成功',
+            onClose: () => {
+              wx.navigateBack()
+            }
+          })
+        } else {
+          Toast({
+            type: 'fail',
+            duration: 1000,
+            message: '保存失败',
+            onClose: () => {
+              wx.navigateBack()
+            }
+          })
+        }
+      },
+      fail: ret => {
+        Toast({
+          type: 'fail',
+          duration: 1000,
+          message: '保存失败',
+          onClose: () => {
+            wx.navigateBack()
+          }
+        })
       }
     })
   }

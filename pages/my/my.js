@@ -1,3 +1,5 @@
+import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast'
+
 const app = getApp()
 Page({
   data: {

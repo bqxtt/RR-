@@ -1,3 +1,4 @@
+const { default: toast } = require("./miniprogram_npm/@vant/weapp/toast/toast")
 
 //app.js
 App({
@@ -6,11 +7,14 @@ App({
       success: res => {
         console.log(res)
         wx.request({
-          url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + this.globalData.appId + '&secret=' + this.globalData.appSecret + '&js_code=' + res.code + '&grant_type=authorization_code',
+          url: this.globalData.requestUrl + '/words/getUserOpenId/' + res.code,
           success: res => {
             console.log(res)
-            this.globalData.openId = res.data.openid
-            //console.log(this.globalData.openId)
+            this.globalData.openId = res.data
+            console.log(this.globalData.openId)
+          },
+          fail: res => {
+            toast.fail(res)
           }
         })
       }
@@ -31,14 +35,9 @@ App({
     })
   },
   globalData: {
-    words : [],
-    markedWords: [],
-    isMarkedPage: null,
-    requestUrl: "https://localhost",
-    appSecret: "7762dee5b68eb4806367f4364758c8fa",
-    appId: "wxe12fe34c0c926447",
+    requestUrl: "https://bqxtcg.com",
     userInfo: null,
     openId: null,
-    word: null
+    word: null,
   }
 })

@@ -1,5 +1,5 @@
 <!--pages/note/note.wxml-->
-<van-cell-group>
+<van-cell-group style="height: 30%;">
   <van-field
     focus="{{true}}"
     type="textarea"
@@ -8,7 +8,7 @@
     bind:input="tmpNote"
     use-button-slot 
   >
-    <van-button slot="button" size="small" type="primary" bind:click="sendNote">发送</van-button>
+    <van-button slot="button" size="small" type="primary" bind:click="sendNote">保存</van-button>
   </van-field>
 </van-cell-group>
 <van-toast id="van-toast"/>

@@ -8,7 +8,8 @@ Page({
     animationMain: null, //正面
     animationBack: null, //背面
     show: false,
-    word: null
+    word: null,
+    notes: []
   },
   onLoad: function (options) {
     this.animation_main = wx.createAnimation({
@@ -59,72 +60,113 @@ Page({
     })
   },
   openComment: function () {
-    console.log(this.data.notes);
     this.setData({
       show: true
     })
+    const toast = Toast.loading({
+      mask: true,
+      duration: 0,
+      loadingType: 'spinner',
+      message: '加载中...'
+    });
+    wx.request({
+      url: app.globalData.requestUrl + '/words/getComments/' + this.data.word.id,
+      success: res => {
+        this.setData({
+          notes: res.data
+        })
+        toast.clear()
+      },
+      fail: res => {
+        toast.clear()
+        Toast.fail("加载失败")
+      }
+    })
+    console.log(this.data.notes);
+
   },
   //标记
   mark: function (e) {
-    var wordId = e.currentTarget.dataset.wordid
-    var mark = this.data.word.isMarked
-    var message = mark ? "取消标记" : "标记成功"
-    if(mark){
-      wx.request({
-        url: app.globalData.requestUrl + "/words/deleteMark?wordId=" + wordId + "&userOpenId=" + app.globalData.openId,
-        method: "DELETE",
-        success: res => {
-          console.log(res)
-          if(res.data === 'success') {
-            var word = this.data.word
-            word.isMarked = false
-            this.setData({
-              word: word
-            })
-            toast.success(message)
-          } else {
+    if (!app.globalData.userInfo) {
+      this.needLogin()
+    } else {
+      var wordId = e.currentTarget.dataset.wordid
+      var mark = this.data.word.isMarked
+      var message = mark ? "取消标记" : "标记成功"
+      if (mark) {
+        wx.request({
+          url: app.globalData.requestUrl + "/words/deleteMark?wordId=" + wordId + "&userOpenId=" + app.globalData.openId,
+          method: "DELETE",
+          success: res => {
+            console.log(res)
+            if (res.data === 'success') {
+              var word = this.data.word
+              word.isMarked = false
+              this.setData({
+                word: word
+              })
+              toast.success(message)
+            } else {
+              toast.fail("取消标记失败")
+            }
+          },
+          fail: res => {
             toast.fail("取消标记失败")
           }
-        },
-        fail: res => {
-          toast.fail("取消标记失败")
-        }
-      })
-    } else {
-      wx.request({
-        url: app.globalData.requestUrl + "/words/addMark",
-        method: "POST",
-        header: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        data: {
-          wordId: wordId,
-          userOpenId: app.globalData.openId
-        },
-        success: res => {
-          console.log(res)
-          if(res.data === 'success') {
-            var word = this.data.word
-            word.isMarked = true
-            this.setData({
-              word: word
-            })
-            toast.success(message)
-          } else {
+        })
+      } else {
+        wx.request({
+          url: app.globalData.requestUrl + "/words/addMark",
+          method: "POST",
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          data: {
+            wordId: wordId,
+            userOpenId: app.globalData.openId
+          },
+          success: res => {
+            console.log(res)
+            if (res.data === 'success') {
+              var word = this.data.word
+              word.isMarked = true
+              this.setData({
+                word: word
+              })
+              toast.success(message)
+            } else {
+              toast.fail("标记失败")
+            }
+          },
+          fail: res => {
             toast.fail("标记失败")
           }
-        },
-        fail: res => {
-          toast.fail("标记失败")
-        }
-      })
+        })
+      }
     }
+  },
+
+  needLogin: function() {
+    Toast({
+      type: 'fail',
+      message: '请先登录',
+      duration: 1000,
+      onClose: () => {
+        wx.switchTab({
+          url: '../my/my',
+        })
+      },
+    });
   },
   //笔记
   showNote: function () {
-    wx.navigateTo({
-      url: '../note/note',
-    })
+    if (!app.globalData.userInfo) {
+      this.needLogin()
+    } else {
+      wx.navigateTo({
+        url: '../note/note?wordId=' + this.data.word.id,
+      })
+    }
   },
   scrollHandle: function (e) {
     //console.log(e);

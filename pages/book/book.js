@@ -37,7 +37,7 @@ Page({
     });
     const that = this
     var url = app.globalData.requestUrl;
-    if(wordBookId === "marked") {
+    if (wordBookId === "marked") {
       url = url + "/words/getMarkedWords"
     } else {
       url = url + '/words/getWords'
@@ -62,15 +62,16 @@ Page({
       },
       fail(res) {
         console.log(res)
+        toast.clear()
         Toast.fail('加载失败')
       }
     })
   },
   scrollHandle: function (e) {
     //console.log(e);
-    this.setData({
-      scrolltop: e.detail.scrollTop
-    })
+    // this.setData({
+    //   scrolltop: e.detail.scrollTop
+    // })
   },
   scrollLoading: function () {
     console.log("hahah");
@@ -79,12 +80,8 @@ Page({
 
   onClick: function (e) {
     console.log(e);
-    //console.log(this.data.words);
     var currentView = e.currentTarget.dataset.currentview;
     app.globalData.word = this.data.words[currentView];
-    // wx.navigateTo({
-    //   url: '../cards/cards?currentView=' + currentView,
-    // })
     wx.navigateTo({
       url: '../card/card'
     })

@@ -1,16 +1,19 @@
-/* pages/card/card.wxss */page{
+/* pages/card/card.wxss */
+page {
   overflow: hidden;
+  height: 100%;
 }
-.scroll-box{
+
+.scroll-box {
   white-space: nowrap;
   height: 105vh;
 }
 
-.card-box{
+.card-box {
   display: inline-block;
 }
 
-.card{
+.card {
   position: relative;
   box-sizing: border-box;
   height: 75vh;
@@ -29,23 +32,25 @@
   border-radius: 10px;
   cursor: pointer;
 }
-.b1{
-  background:skyblue;
+
+.b1 {
+  background: skyblue;
 }
+
 .b2 {
-  background:tomato;
+  background: tomato;
   transform: rotateY(-180deg);
 }
-.number
-{
+
+.number {
   position: absolute;
   width: 100%;
   height: 10%;
   top: 90%;
   text-align: center;
 }
-.desc
-{
+
+.desc {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -55,52 +60,100 @@
   height: 90%;
   white-space: normal;
 }
-.wordKey
-{
+
+.wordKey {
   font-size: 30px;
   width: 80%;
   text-align: center;
 }
-.character
-{
+
+.character {
   font-size: 20px;
   width: 100%;
   text-align: center;
 }
-.chinese
-{
+
+.chinese {
   font-size: 30px;
   width: 80%;
   text-align: center;
 }
-.english
-{
+
+.english {
   font-size: 30px;
   width: 80%;
   text-align: center;
   margin-top: 10px;
 }
-.card-button
-{
+
+.card-button {
   position: relative;
   width: 80vw;
   left: 10vw;
   display: flex;
   justify-content: space-around;
 }
-.upArrow
-{
+
+.upArrow {
   height: 8vh;
   display: flex;
   justify-content: center;
 }
-.notes{
-  height: 100%;
+
+.notes {
+  height: 70%;
   width: 100%;
   position: fixed;
+
 }
-.notes-list{
+
+.notes-list {
   height: 100%;
   overflow: hidden;
-  padding-top: 30px;
+  /* padding-top: 30px; */
+}
+
+.note {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: row;
+}
+
+.user-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 10rpx;
+  border-radius: 50%;
+}
+
+.user-nickname {
+  font-size: 40rpx;
+  font-weight: bolder;
+  color: #000000;
+}
+
+.content {
+  margin: 30rpx;
+  font-size: 35rpx;
+}
+
+.time {
+  color: rgb(92, 92, 92);
+  font-size: 30rpx;
+  margin-top: 8rpx;
+}
+
+.info {
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-left: 50rpx;
+  display: flex;
+  flex-direction: column;
 }
