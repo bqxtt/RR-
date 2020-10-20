@@ -1,10 +1,30 @@
-<scroll-view class="scroll-box" scroll-x scroll-with-animation
-  scroll-into-view="{{toView}}"
-  bindtouchstart="touchStart"
-  bindtouchend="touchEnd">
-    <view wx:for="{{list}}" wx:key="{{item}}" class="card-box" id="card_{{index}}">
-      <view class="card">
-        <text>{{item}}</text>
-      </view>
-    </view>
-</scroll-view>
+<view class="container">
+  <view class="userinfo">
+    <van-button wx:if="{{!hasUserInfo && canIUse}}" type="primary" bindgetuserinfo="login" open-type="getUserInfo">登录
+    </van-button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <van-divider contentPosition="left">
+    常用功能
+  </van-divider>
+
+  <van-grid column-num="3" clickable square border="{{false}}">
+    <van-grid-item icon="../../../../resource/image/mark.png" text="我的标记" link-type="navigateTo"
+      url="/pages/book/book?wordbookid=marked&wordbookname=我的标记" />
+    <van-grid-item icon="../../../../resource/image/dictionary.png" text="单词"  link-type="switchTab"
+      url="/pages/words/words"/>
+  </van-grid>
+
+  <van-divider contentPosition="left">
+    小游戏
+  </van-divider>
+
+  <van-grid column-num="3" clickable square border="{{false}}">
+    <van-grid-item icon="../../../../resource/image/move.png" text="闯关" />
+    <van-grid-item icon="../../../../resource/image/chat.png" text="情景对话" />
+  </van-grid>
+
+</view>

@@ -1,14 +1,23 @@
-
-.book
-{
+.book {
   display: flex;
   flex-direction: column;
   width: 30%;
   text-align: center;
   margin: 10rpx;
 }
-.books
-{
+
+.books {
   display: flex;
   flex-wrap: wrap;
+}
+
+.container {
+  padding-right: 10px;
+  padding-left: 5px;
+}
+
+.bookname {
+  padding-top: 5px;
+  color: rgb(0, 0, 0);
+  font-family: Arial, Helvetica, sans-serif;
 }

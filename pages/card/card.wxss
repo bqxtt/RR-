@@ -1,0 +1,96 @@
+/* pages/card/card.wxss */page{
+  overflow: hidden;
+}
+.scroll-box{
+  white-space: nowrap;
+  height: 105vh;
+}
+
+.card-box{
+  display: inline-block;
+}
+
+.card{
+  position: relative;
+  box-sizing: border-box;
+  height: 75vh;
+  width: 80vw;
+  margin: 5vh 10vw;
+}
+
+.box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.b1{
+  background:skyblue;
+}
+.b2 {
+  background:tomato;
+  transform: rotateY(-180deg);
+}
+.number
+{
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  top: 90%;
+  text-align: center;
+}
+.desc
+{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90%;
+  white-space: normal;
+}
+.wordKey
+{
+  font-size: 30px;
+  width: 80%;
+  text-align: center;
+}
+.character
+{
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+}
+.chinese
+{
+  font-size: 30px;
+  width: 80%;
+  text-align: center;
+}
+.english
+{
+  font-size: 30px;
+  width: 80%;
+  text-align: center;
+  margin-top: 10px;
+}
+.card-button
+{
+  position: relative;
+  width: 80vw;
+  left: 10vw;
+  display: flex;
+  justify-content: space-around;
+}
+.upArrow
+{
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+}

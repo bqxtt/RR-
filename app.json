@@ -3,38 +3,29 @@
     "pages/home/home",
     "pages/books/books",
     "pages/cards/cards",
-    
-    
     "pages/book/book",
     "pages/test/test",
-    "pages/my/my",
-    "pages/index/index",
-    
-    "pages/logs/logs",
     "pages/words/words",
     "pages/games/games",
     "pages/change/change",
     "pages/comment/comment",
-    "pages/note/note"
+    "pages/note/note",
+    "pages/my/my",
+    "pages/card/card"
   ],
   "tabBar": {
     "custom": true,
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/home/home",
         "text": "首页"
       },
       {
-        "pagePath": "pages/change/change",
-        "text": "变位"
-      },
-      {
-        "pagePath": "pages/words/words",
+        "pagePath": "pages/books/books",
         "text": "单词"
       },
       {
-        "pagePath": "pages/games/games",
-        "text": "游戏"
+        "pagePath": "pages/my/my",
+        "text": "我的"
       }
     ]
   },
@@ -58,7 +49,11 @@
     "van-dialog": "@vant/weapp/dialog/index",
     "van-toast": "@vant/weapp/toast/index",
     "van-popup": "@vant/weapp/popup/index",
-    "van-field": "@vant/weapp/field/index"
+    "van-field": "@vant/weapp/field/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-sticky": "@vant/weapp/sticky/index"
   },
   "sitemapLocation": "sitemap.json"
 }

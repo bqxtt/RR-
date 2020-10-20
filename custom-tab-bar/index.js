@@ -9,19 +9,14 @@ Component({
           "text": "首页"
       },
       {
-        "pagePath": "/pages/change/change",
-        "icon": "exchange",
-        "text": "变位"
-      },
-      {
-        "pagePath": "/pages/words/words",
+        "pagePath": "/pages/books/books",
         "icon": "records",
         "text": "单词"
       },
       {
-        "pagePath": "/pages/games/games",
+        "pagePath": "/pages/my/my",
         "icon": "apps-o",
-        "text": "游戏"
+        "text": "我的"
       }
     ]
   },

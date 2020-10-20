@@ -1,22 +1,35 @@
 /* pages/book/book.wxss */
-Page
-{
+Page {
   height: 100%;
 }
+
 .van-swipe-cell__right {
   width: 65px;
   height: 65px;
   color: #0000ff;
 }
-.words-list
-{
-  flex : 1;
-  overflow-x:hidden;
-  overflow-y:auto;
+
+.words-list {
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
-.words
-{
+
+.words {
   display: flex;
   flex-direction: column;
-  height:100%;
+  height: 95%;
+}
+
+.container {
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.title {
+  font-size: 18px; 
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

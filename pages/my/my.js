@@ -1,29 +1,60 @@
-const DEFAULT_PAGE = 0;
-
+const app = getApp()
 Page({
-  startPageX: 0,
-  currentView: DEFAULT_PAGE,
   data: {
-    toView: `card_${DEFAULT_PAGE}`,
-    list: ['Javascript', 'Typescript', 'Java', 'PHP', 'Go']
+    userInfo: null,
+    hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-
-  touchStart(e) {
-    this.startPageX = e.changedTouches[0].pageX;
-  },
-
-  touchEnd(e) {
-    const moveX = e.changedTouches[0].pageX - this.startPageX;
-    const maxPage = this.data.list.length - 1;
-    if (Math.abs(moveX) >= 150) {
-      if (moveX > 0) {
-        this.currentView = this.currentView !== 0 ? this.currentView - 1 : 0;
-      } else {
-        this.currentView = this.currentView !== maxPage ? this.currentView + 1 : maxPage;
+  onLoad: function () {
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+    } else if (this.data.canIUse) {
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
       }
+    } else {
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true
+          })
+        }
+      })
     }
+  },
+  onShow: function () {
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        active: 2
+      })
+    }
+  },
+  login: function (e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
     this.setData({
-      toView: `card_${this.currentView}`
-    });
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
+    wx.login({
+      success: res => {
+        console.log(res)
+        wx.request({
+          url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + app.globalData.appId + '&secret=' + app.globalData.appSecret + '&js_code=' + res.code + '&grant_type=authorization_code',
+          success: res => {
+            console.log(res)
+          }
+        })
+      }
+    })
   }
 })
