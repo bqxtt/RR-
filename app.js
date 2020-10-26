@@ -35,7 +35,7 @@ App({
     })
   },
   globalData: {
-    requestUrl: "https://bqxtcg.com",
+    requestUrl: "https://localhost",
     userInfo: null,
     openId: null,
     word: null,

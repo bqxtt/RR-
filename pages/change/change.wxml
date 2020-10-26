@@ -1,3 +1,19 @@
-<button class="b" type="primary" style="width:100%" > 变位查询 </button>
+<view class="container">
+  <view class="search">
+    <van-search value="{{ value }}" label="单词" placeholder="请输入查询的单词" use-action-slot bind:change="onChange"
+      bind:search="onSearch">
+      <view slot="action" bind:tap="onClick">搜索</view>
+    </van-search>
+  </view>
 
-<button class="b" type="primary" style="width:100%" bindtap="toPractice"> 变位练习 </button>
+  <view class="result">
+    <van-index-bar index-list="{{ indexList }}" scroll-top="{{ scrollTop }}">
+      <view wx:for="{{indexList}}">
+        <van-index-anchor use-slot index="{{item}}"> dadsf</van-index-anchor>
+        <van-cell title="文本" />
+        <van-cell title="文本" />
+        <van-cell title="文本" />
+      </view>
+    </van-index-bar>
+  </view>
+</view>

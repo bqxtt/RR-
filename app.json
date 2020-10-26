@@ -11,11 +11,13 @@
     "pages/comment/comment",
     "pages/note/note",
     "pages/my/my",
-    "pages/card/card"
+    "pages/card/card",
+    "pages/game/game"
   ],
   "tabBar": {
     "custom": true,
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/home/home",
         "text": "首页"
       },
@@ -53,7 +55,16 @@
     "van-divider": "@vant/weapp/divider/index",
     "van-grid": "@vant/weapp/grid/index",
     "van-grid-item": "@vant/weapp/grid-item/index",
-    "van-sticky": "@vant/weapp/sticky/index"
+    "van-sticky": "@vant/weapp/sticky/index",
+    "van-sidebar": "@vant/weapp/sidebar/index",
+    "van-sidebar-item": "@vant/weapp/sidebar-item/index",
+    "van-search": "@vant/weapp/search/index",
+    "van-index-bar": "@vant/weapp/index-bar/index",
+    "van-index-anchor": "@vant/weapp/index-anchor/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-radio": "@vant/weapp/radio/index",
+    "van-radio-group": "@vant/weapp/radio-group/index"
   },
   "sitemapLocation": "sitemap.json"
 }

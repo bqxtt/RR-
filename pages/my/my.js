@@ -47,16 +47,16 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-    wx.login({
-      success: res => {
-        console.log(res)
-        wx.request({
-          url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + app.globalData.appId + '&secret=' + app.globalData.appSecret + '&js_code=' + res.code + '&grant_type=authorization_code',
-          success: res => {
-            console.log(res)
-          }
-        })
-      }
-    })
+    // wx.login({
+    //   success: res => {
+    //     console.log(res)
+    //     wx.request({
+    //       url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + app.globalData.appId + '&secret=' + app.globalData.appSecret + '&js_code=' + res.code + '&grant_type=authorization_code',
+    //       success: res => {
+    //         console.log(res)
+    //       }
+    //     })
+    //   }
+    // })
   }
 })

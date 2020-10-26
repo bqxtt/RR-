@@ -1,0 +1,34 @@
+<!--pages/game/game.wxml-->
+<view class="container">
+  <view class="head">
+    <text class="title">第{{count}}关</text>
+  </view>
+  <view class="body">
+    <view class="problem">
+      <view wx:if="{{problem.imageUrl}}" class="pro-img-box">
+        <image src="{{problem.imageUrl}}" class="problem-img" />
+      </view>
+      <view class="problem-content">
+        <text>{{problem.problemContent}}</text>
+      </view>
+    </view>
+    <view class="answers">
+      <van-radio-group value="{{ radio }}" bind:change="onChange">
+        <view class="answer" wx:for="{{problem.answers}}" wx:key="index">
+          <van-radio name="{{index + 1}}">
+            <view wx:if="{{item.imageUrl}}" class="ans-img-box">
+              <image src="{{item.imageUrl}}" class="answer-img" />
+            </view>
+            <view wx:if="{{item.answerContent}}" class="answer-content">
+              <text>{{item.answerContent}}</text>
+            </view>
+          </van-radio>
+        </view>
+      </van-radio-group>
+    </view>
+    <view class="confirm">
+      <van-button bind:click="onClick">确认</van-button>
+    </view>
+  </view>
+</view>
+<van-dialog id="van-dialog" />

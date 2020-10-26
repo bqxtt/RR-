@@ -14,8 +14,10 @@
   <van-grid column-num="3" clickable square border="{{false}}">
     <van-grid-item icon="../../../../resource/image/mark.png" text="我的标记" link-type="navigateTo"
       url="/pages/book/book?wordbookid=marked&wordbookname=我的标记" />
-    <van-grid-item icon="../../../../resource/image/dictionary.png" text="单词"  link-type="switchTab"
-      url="/pages/books/books"/>
+    <van-grid-item icon="../../../../resource/image/dictionary.png" text="单词" link-type="switchTab"
+      url="/pages/books/books" />
+    <van-grid-item icon="../../../../resource/image/change.png" text="变位查询" link-type="navigateTo"
+      url="/pages/change/change" />
   </van-grid>
 
   <van-divider contentPosition="left">
@@ -23,7 +25,8 @@
   </van-divider>
 
   <van-grid column-num="3" clickable square border="{{false}}">
-    <van-grid-item icon="../../../../resource/image/move.png" text="闯关" />
+    <van-grid-item icon="../../../../resource/image/move.png" text="闯关" link-type="navigateTo"
+    url="/pages/game/game"/>
     <van-grid-item icon="../../../../resource/image/chat.png" text="情景对话" />
   </van-grid>
 

@@ -1,0 +1,44 @@
+/* pages/game/game.wxss */
+.head {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.body {
+  padding: 10px;
+}
+
+.problem {
+  margin-bottom: 20px;
+}
+
+.pro-img-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.problem-content {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 25px;
+}
+
+.answers {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.answer {
+  margin-bottom: 20px;
+}
+
+.confirm {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
