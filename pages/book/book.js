@@ -22,7 +22,7 @@ Page({
   onLoad: function (options) {
     //console.log(options.id);
     wordBookId = options.wordbookid
-    console.log(wordBookId)
+    //console.log(wordBookId)
     this.setData({
       wordName: options.wordbookname
     })
@@ -42,7 +42,7 @@ Page({
     } else {
       url = url + '/words/getWords'
     }
-    console.log(app.globalData.openId)
+    //console.log(app.globalData.openId)
     wx.request({
       url: url,
       method: "POST",
@@ -57,7 +57,7 @@ Page({
         that.setData({
           words: res.data
         })
-        console.log(res.data)
+        //console.log(res.data)
         toast.clear()
       },
       fail(res) {

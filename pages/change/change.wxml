@@ -7,13 +7,26 @@
   </view>
 
   <view class="result">
-    <van-index-bar index-list="{{ indexList }}" scroll-top="{{ scrollTop }}">
-      <view wx:for="{{indexList}}">
-        <van-index-anchor use-slot index="{{item}}"> dadsf</van-index-anchor>
-        <van-cell title="文本" />
-        <van-cell title="文本" />
-        <van-cell title="文本" />
-      </view>
-    </van-index-bar>
+    <van-tabs active="{{ activeTab }}" bind:change="onTabChange" sticky="{{true}}" animated="{{true}}" swipeable>
+      <van-tab wx:for="{{tabs}}" wx:key="index" wx:for-item="tab" title="{{tab.tabName}}">
+        <view class="tables">
+          <view class="table" wx:for="{{tab.tables}}" wx:key="index" wx:for-item="table">
+            <view class="tn bg-w">
+              <view class="th" wx:for="{{table.columns}}" wx:key="index">{{item}}</view>
+            </view>
+            <block wx:for="{{table.rows}}" wx:key="index" wx:for-item="row">
+              <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+                <view class="td" wx:for="{{row}}" wx:key="index">{{item}}</view>
+              </view>
+              <view class="tr" wx:else>
+                <view class="td" wx:for="{{row}}" wx:key="index">{{item}}</view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </van-tab>
+    </van-tabs>
   </view>
 </view>
+
+<van-toast id="van-toast" />

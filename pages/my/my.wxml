@@ -3,7 +3,7 @@
     <van-button wx:if="{{!hasUserInfo && canIUse}}" type="primary" bindgetuserinfo="login" open-type="getUserInfo">登录
     </van-button>
     <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
@@ -27,7 +27,6 @@
   <van-grid column-num="3" clickable square border="{{false}}">
     <van-grid-item icon="../../../../resource/image/move.png" text="闯关" link-type="navigateTo"
     url="/pages/game/game"/>
-    <van-grid-item icon="../../../../resource/image/chat.png" text="情景对话" />
   </van-grid>
 
 </view>

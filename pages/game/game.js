@@ -23,6 +23,25 @@ Page({
   },
 
   init() {
+    this.updateScore()
+    this.setData({
+      count: 1,
+      radio: 0
+    })
+    this.score = 0
+    wx.request({
+      url: app.globalData.requestUrl + '/problems/getAllProblems',
+      success: res => {
+        problems = res.data
+        //console.log(problems)
+        this.setData({
+          problem: problems[this.data.count - 1]
+        })
+      }
+    })
+  },
+
+  updateScore() {
     wx.request({
       url: app.globalData.requestUrl + '/problems/updateScore',
       method: 'POST',
@@ -40,27 +59,18 @@ Page({
         console.log(res)
       }
     })
-    this.setData({
-      count: 1,
-      radio: 0
-    })
-    this.score = 0
-    wx.request({
-      url: app.globalData.requestUrl + '/problems/getAllProblems',
-      success: res => {
-        problems = res.data
-        console.log(problems)
-        this.setData({
-          problem: problems[this.data.count - 1]
-        })
-      }
-    })
   },
 
   nextProblem() {
     var newCount = this.data.count + 1
     if (newCount > problems.length) {
-      return
+      Dialog.alert({
+        title: '闯关成功！',
+        message: '当前积分：' + this.score,
+      }).then(() => {
+        this.updateScore()
+        wx.navigateBack()
+      });
     }
     this.setData({
       count: newCount,
@@ -76,6 +86,9 @@ Page({
   },
 
   onClick(event) {
+    if(this.data.radio == 0) {
+      return 
+    }
     var right = this.data.problem.answers[this.data.radio - 1].right
     if (right) {
       this.score++

@@ -1,16 +1,13 @@
 {
   "pages": [
+    "pages/my/my",
     "pages/home/home",
     "pages/books/books",
-    "pages/cards/cards",
     "pages/book/book",
-    "pages/test/test",
     "pages/words/words",
-    "pages/games/games",
     "pages/change/change",
     "pages/comment/comment",
     "pages/note/note",
-    "pages/my/my",
     "pages/card/card",
     "pages/game/game"
   ],
@@ -18,16 +15,12 @@
     "custom": true,
     "list": [
       {
-        "pagePath": "pages/home/home",
-        "text": "首页"
+        "pagePath": "pages/my/my",
+        "text": "我的"
       },
       {
         "pagePath": "pages/books/books",
         "text": "单词"
-      },
-      {
-        "pagePath": "pages/my/my",
-        "text": "我的"
       }
     ]
   },

@@ -4,19 +4,14 @@ Component({
     list:
     [
       {
-          "pagePath": "/pages/home/home",
-          "icon": "home-o",
-          "text": "首页"
+        "pagePath": "/pages/my/my",
+        "icon": "apps-o",
+        "text": "我的"
       },
       {
         "pagePath": "/pages/books/books",
         "icon": "records",
         "text": "单词"
-      },
-      {
-        "pagePath": "/pages/my/my",
-        "icon": "apps-o",
-        "text": "我的"
       }
     ]
   },
